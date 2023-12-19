@@ -97,7 +97,7 @@
         <Table
             width="100%"
             class="mastertables"
-            items="{MARINE_TRAFFIC_API_SRV>/PortMasterSet}"
+            items="{/ZPORT}"
             visible="true"
             id="firstTableId"
             mode="MultiSelect"

@@ -49,7 +49,7 @@ entity MAS_BID {
 
     TABLENAME    : String(20); //table name
 
-    MULTI_CHOICE : String(1); //multiple choice
+    MULTI_CHOICE : Boolean; //multiple choice
     
 
 

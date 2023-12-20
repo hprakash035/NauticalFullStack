@@ -1,111 +1,225 @@
-<mvc:View controllerName="nauticalfe.controller.CostMaster"
-    xmlns:html="http://www.w3.org/1999/xhtml"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+<mvc:View
+    xmlns:tnt="sap.tnt"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    controllerName="nauticalfe.controller.CostMaster"
     xmlns="sap.m"
-    xmlns:core="sap.ui.core">
-    <Page id="page">
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns:core="sap.ui.core"
+>
+    <Page id="_IDGenPage1">
         <headerContent>
             <!-- Your header content goes here -->
-            <Bar id="_IDGenBar2" class="customHeader">
+            <Bar
+                id="_IDGenBar1"
+                class="customHeader"
+            >
                 <contentLeft>
-                    <Button id="_IDGenButton1" class="customHeaderButton"  icon="sap-icon://nav-back" type="Default" />
-                    <Image id="_IDGenImage1" src="../images/ingenxlogo.jpg" height="75%" />
-                    <Text id="_IDGenText1" class="textBid" text="Display View Cost component Table: Overview" />
+                    <core:Icon
+                        id="_IDGenIcon1"
+                        src="sap-icon://nav-back"
+                        class="size1"
+                        color="#FFFFFF"
+                        press="backPress"
+                    />
+                    <core:Icon
+                        id="_IDGenIcon2"
+                        src="sap-icon://home"
+                        class="size1"
+                        color="#FFFFFF"
+                        press="onBackPressHome"
+                    />
+                    <Image
+                        id="_IDGenImage2"
+                        src="../images/ingenxlogo.jpg"
+                        height="75%"
+                    />
+                    <Text
+                        id="_IDGenText1"
+                        class="textBid"
+                        text='Change View Cost Master : Overview'
+                    />
                 </contentLeft>
- 
                 <contentRight>
-                    <core:Icon id="_IDGenIcon1" src="sap-icon://search" class="size1" color="#FFFFFF">
+                    <core:Icon
+                        id="_IDGenIcon3"
+                        src="sap-icon://search"
+                        class="size1"
+                        color="#FFFFFF"
+                    >
                         <core:layoutData>
-                            <FlexItemData id="_IDGenFlexItemData1" growFactor="1" />
+                            <FlexItemData
+                                id="_IDGenFlexItemData1"
+                                growFactor="1"
+                            />
                         </core:layoutData>
                     </core:Icon>
- 
-                    <core:Icon id="_IDGenIcon2" src="sap-icon://SAP-icons-TNT/user" class="size1" color="#FFFFFF" >
+                    <core:Icon
+                        id="_IDGenIcon4"
+                        src="sap-icon://SAP-icons-TNT/user"
+                        class="size1"
+                        color="#FFFFFF"
+                    >
                         <core:layoutData>
-                            <FlexItemData id="_IDGenFlexItemData2" growFactor="1"/>
+                            <FlexItemData
+                                id="_IDGenFlexItemData2"
+                                growFactor="1"
+                            />
                         </core:layoutData>
                     </core:Icon>
                 </contentRight>
             </Bar>
         </headerContent>
-        <Bar id="_IDGenBar1" class="_IDGenBar1" >
+        <Bar
+            id="_IDGenBar12"
+            class="_IDGenBar1"
+        >
             <contentLeft>
+                <Button
+                    id="_IDGenButton12"
+                    text="New Entries"
+                    press="newEntries"
+                />
+                <Button
+                    id="_IDGenButton13"
+                    text="Copy As"
+                />
+                <Button
+                    id="_IDGenButton14"
+                    text="Delete"
+                    press="onDeleteVoyageType"
+                />
+                <Button
+                    id="_IDGenButton15"
+                    text="Update"
+                    press="onShowUpdateDialog"
+                />
                 
-                <Button id="_IDGenButton6" text="Select All" />
-                <Button id="_IDGenButton7" text="Select Block" />
-                <Button id="_IDGenButton8" text="Deselect All" />
-                <Button id="button" icon="sap-icon://slim-arrow-down" iconFirst="false" text="More" press="onPress"
-                    ariaHasPopup="Menu"/>
+                <Button
+                    id="button"
+                    icon="sap-icon://slim-arrow-down"
+                    iconFirst="false"
+                    text="More"
+                    press="onPress"
+                    ariaHasPopup="Menu"
+                />
             </contentLeft>
- 
             <contentRight>
-                <core:Icon id="_IDGenIcon3" src="sap-icon://print" class="size1" color="#FF0000" />
-                <Button id="_IDGenButton9" text="Display" />
-                <Button id="_IDGenButton10" text="Exit" press="onBackPress"/>
+                <core:Icon
+                    id="_IDGenIcon33"
+                    src="sap-icon://print"
+                    class="size1"
+                    color="#FF0000"
+                />
+                <Button
+                    id="_IDGenButton19"
+                    text="Display"
+                />
+                <Button
+                    id="_IDGenButton20"
+                    text="Exit"
+                    press="MastPage"
+                />
             </contentRight>
         </Bar>
-        <Text id="_IDGenText5" text="Cost Component Table" class="masterheadings"></Text>
-        <Table width="100%" class="mastertables" visible="true" mode="MultiSelect"
-            id="firstTableId">
+        <Label
+            text="Cost Master Table "
+            class="masterheadings"
+        />
+        <Table
+            id="createTypeTable"
+            mode="MultiSelect"
+            items="{/NAVOYGC}"
+            updateFinished="onTableUpdateFinished"
+            selectionChange="selectedItems"
+            width="100%"
+            class="mastertables"
+            
+        >
             <columns>
-                <!-- <Column id="_IDGenColumn1" width="30px">
-                    <Label id="_IDGenLabel1" text="" />
-                </Column> -->
-                <Column id="_IDGenColumn2" width="10%">
-                    <Label id="_IDGenLabel2" text="Cost Code" />
+                <Column id="_IDGenColumn1">
+                    <Text
+                        id="_IDGenText11"
+                        text="Cost Code"
+                    />
                 </Column>
-                <Column id="_IDGenColumn3" width="15%">
-                    <Label id="_IDGenLabel3" text="Cost Code Description" />
-                </Column>
-                <Column id="_IDGenColumn4">
-                    <Label id="_IDGenLabel4" text="" />
+                <Column id="_IDGenColumn2">
+                    <Text
+                        id="_IDGenText2"
+                        text="Cost Code Description"
+                    />
                 </Column>
             </columns>
-            <ColumnListItem id="_IDClmnListItem1">
-                <cells>
-                    <Text id="_IDGenTxt2" text="{}"></Text>
-                    <Text id="_IDGenTxt3" text="{}"></Text>
-                    <Text id="_IDGenTxt4" text="{}"></Text>
-                </cells>
-            </ColumnListItem>
-            <ColumnListItem id="_IDGenClmnListItem1">
-                <cells>
-                    <Text id="_IDText2" text="{}"></Text>
-                    <Text id="_IDText3" text="{}"></Text>
-                    <Text id="_IDText4" text="{}"></Text>
-                </cells>
-            </ColumnListItem>
-            <ColumnListItem id="_IDGenColmnListItem1">
-                <cells>
-                    <Text id="_IDTxt2" text="{}"></Text>
-                    <Text id="_IDTxt3" text="{}"></Text>
-                    <Text id="_IDTxt4" text="{}"></Text>
-                </cells>
-            </ColumnListItem>
-            <ColumnListItem id="_IDGenColumnListItem1">
-                <cells>
-                    <Text id="IDTxt0" text="{}"></Text>
-                    <Text id="IDGenText3" text="{}"></Text>
-                    <Text id="IDGenText4" text="{}"></Text>
-                </cells>
-            </ColumnListItem>
-            <ColumnListItem id="_IDColumnListItem1">
-                <cells>
-                    <Text id="_IDGenText2" text="{}"></Text>
-                    <Text id="_IDGenText3" text="{}"></Text>
-                    <Text id="_IDGenText4" text="{}"></Text>
-                </cells>
-            </ColumnListItem>
+            <items>
+                <ColumnListItem id="_IDGenColumnListItem1">
+                    <cells>
+                     
+                        <Text
+                            id="_IDGenInput1"
+                            text="{COSTCODE}"
+                        />
+                        <Text
+                            id="_IDGenInput2"
+                            text="{CSTCODES}"
+                        />
+                        
+                    </cells>
+                </ColumnListItem>
+            </items>
         </Table>
-        <footer>
-                <OverflowToolbar id="_IDGenOverflowToolbar1" design="Auto">
-                <ToolbarSpacer id="_IDGenToolbarSpacer1" />
-                <Button id="_IDGenButton11" text="Save" ></Button>
-                <Button id="_IDGenButton12" text="Cancel"  ></Button>
-                </OverflowToolbar>
-            </footer>
+        <Table
+            id="entryTypeTable"
+            updateFinished="onTableUpdateFinished"
+            selectionChange="selectedItems"
+            width="100%"
+            class="mastertables"
+            visible="false"
+        >
+            <columns>
+                <Column>
+                    <Text  text="Cost Code" />
+                </Column>
+                <Column>
+                    <Text text="Cost Code Description" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Input id="COSTCODE" value="" />
+                        <Input id="CSTCODES" value=""/>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+        <!-- <Button id="_IDGenButton2" text="Add Row" press="updateTableRefresh" /> -->
         
-        
+            <!-- footers for both pages are coded differently as save functionality is different in
+        both main page and new entries page  -->
 
+            <!-- main page footer -->
+            <OverflowToolbar
+                id="mainPageFooter"
+                design="Auto"
+                visible="false"
+            >
+                <ToolbarSpacer id="_IDGenToolbarSpacer3" />
+                <Button
+                    id="mainPageSave"
+                    text="Save"
+                    press="onSave"
+                />
+                <Button
+                    id="_IDGenButton22"
+                    text="Cancel"
+                />
+            </OverflowToolbar>
+
+            <!--new entries footer -->
+            
+        
     </Page>
+
+    
 </mvc:View>

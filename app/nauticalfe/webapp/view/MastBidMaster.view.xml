@@ -96,7 +96,7 @@
         <Table id="createTypeTable"
             width="100%"
             class="mastertables"
-            items="{ /MAS_BID }"
+            items="{/MAS}"
             mode="MultiSelect"
             
         >
@@ -181,8 +181,8 @@
                     <Input id="BNAME" value="{}" />
                     <Input id="CODE" value="{}" />
                     <Input id="VALUE" value="{}" />
-                    <Input id="CVALUE_code" value="{}" />
-                    <Input id="CUNIT_code" value="{}" />
+                    <Input id="CVALUE" value="{}" />
+                    <Input id="CUNIT" value="{}" />
                     <Input id="DATATYPE" value="{}" />
                     <Input id="TABLENAME" value="{}" />
                     <CheckBox id="MULTI_CHOICE"/>

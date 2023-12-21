@@ -45,7 +45,7 @@ sap.ui.define(
         var JsonData = JSON.stringify(data)
         console.log(JsonData);
 
-        let EndPoint = "/odata/v4/nautical/NAUTI_MAS-VOYTYP";
+        let EndPoint = "/odata/v4/nautical/";
         fetch(EndPoint, {
             method: 'POST',
             headers: {

@@ -41,8 +41,7 @@ sap.ui.define(
           var DATATYPE =  this.getView().byId("DATATYPE").getValue();
           var TABLENAME =  this.getView().byId("TABLENAME").getValue();
           var MULTI_CHOICE =  this.getView().byId("MULTI_CHOICE").getSelected();
-          console.log(MULTI_CHOICE);
-          
+                 
             
           var data = {
   
@@ -50,18 +49,19 @@ sap.ui.define(
             CODE :CODE,
             VALUE: VALUE,
             CVALUE:CVALUE,
-            CUNIT:CUNIT,
+            CUNIT:CUNIT,  
             DATATYPE:DATATYPE,
             TABLENAME:TABLENAME,
             MULTI_CHOICE:MULTI_CHOICE
  
           };
-          console.log(data);
+          
+         
   
   
          
           var JsonData = JSON.stringify(data)
-          let EndPoint = "/odata/v4/nautical/MAS_BID";
+          let EndPoint = "/odata/v4/nautical/MAS";
           fetch(EndPoint, {
             method: 'POST',
             headers: {
@@ -72,7 +72,7 @@ sap.ui.define(
             .then(function (res) {
               
               if (res.ok) {
-                location.reload();
+                this.getView().getModel().refresh();
                 console.log("Entity created successfully");
                 MessageToast.show(`Entity created successfully`)
                

@@ -11,6 +11,7 @@ using {voyage_approval} from '../db/approval_voyage_schema';
 using {create_chartering} from '../db/chartering_schema';
 using {submit_quotation} from '../db/submit_quotation_schema';
 using {compare_quotation} from '../db/compare_quotaion_schema';
+using {NAUTI_MAS.BIDMASTER} from '../db/voyage_master_data';
 
 service Nautical {
     entity EPATH              as projection on api_url.EPATH;
@@ -23,7 +24,7 @@ service Nautical {
     entity VOYTYP             as projection on NAUTI_MAS.VOYTYP;
     entity CARTYP             as projection on NAUTI_MAS.CARTYP;
     entity CURR               as projection on NAUTI_MAS.CURR;
-    entity MAS_BID            as projection on NAUTI_MAS.MAS_BID;
+    entity MAS as projection on NAUTI_MAS.BIDMASTER;
     entity ZPORT              as projection on NAUTI_MAS.ZPORT;
     entity NAVOYGUOM          as projection on NAUTI_MAS.NAVOYGUOM;
     entity NAVOYGC            as projection on NAUTI_MAS.NAVOYGC;

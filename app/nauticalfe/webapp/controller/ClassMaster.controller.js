@@ -445,7 +445,7 @@ sap.ui.define(
             .then(function (res) {
               
               if (res.ok) {
-                location.reload();
+                
                 console.log("Entity created successfully");
                 MessageToast.show(`Entity created successfully`)
                
@@ -462,7 +462,7 @@ sap.ui.define(
             this.getView().byId("createTypeTable").setVisible(true)
             this.getView().byId("entryTypeTable").setVisible(false)
             this.getView().byId("mainPageFooter").setVisible(false)
-            
+            this.getView().getModel().refresh();
   
            
             

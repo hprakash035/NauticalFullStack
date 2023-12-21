@@ -2,10 +2,10 @@ sap.ui.define(
     [
         "sap/ui/core/mvc/Controller"
     ],
-    function(BaseController) {
+    function(Controller) {
       "use strict";
   
-      return BaseController.extend("nauticalfe.controller.PortMaster", {
+      return Controller.extend("nauticalfe.controller.PortMaster", {
         onInit() {
         }
       });
